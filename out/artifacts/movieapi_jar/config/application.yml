@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: @spring.profiles.active@
+---
+server:
+  port: 9010
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/testdb?useUnicode=true&serverTimezone=Asia/Seoul&userSSL=false
+    username: root
+    password: root01
+
+---
+
+server:
+  port: 9020
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/testdb?useUnicode=true&serverTimezone=Asia/Seoul&userSSL=false
+    username: root
+    password: root01
