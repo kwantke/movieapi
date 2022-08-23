@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 public class MovieDto {
 
-    private long id;
+    private int id;
     private String img;
     private String name;
     private String type;

@@ -1,0 +1,62 @@
+server:
+  port: 9010
+
+spring:
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-1.cfh61qv9x1da.us-west-2.rds.amazonaws.com:3306/movieapi?useUnicode=true&serverTimezone=Asia/Seoul&userSSL=false
+    username: admin
+    password: adminadmin01
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: true
+    show-sql: true
+
+---
+spring:
+  profiles:
+    active: local
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: true
+    show-sql: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-1.cfh61qv9x1da.us-west-2.rds.amazonaws.com:3306/movieapi?useUnicode=true&serverTimezone=Asia/Seoul&userSSL=false
+    username: admin
+    password: adminadmin01
+
+---
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-1.cfh61qv9x1da.us-west-2.rds.amazonaws.com:3306/movieapi?useUnicode=true&serverTimezone=Asia/Seoul&userSSL=false
+    username: admin
+    password: adminadmin01
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    generate-ddl: true
+    show-sql: true
+---
+
+spring:
+  prfiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-1.cfh61qv9x1da.us-west-2.rds.amazonaws.com:3306/movieapi?useUnicode=true&serverTimezone=Asia/Seoul&userSSL=false
+    username: admin
+    password: adminadmin01
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    generate-ddl: true
+    show-sql: true
