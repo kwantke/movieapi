@@ -7,13 +7,12 @@ node {
         stage('Clone Repo') {
             //for display purposes
             //Get some code from a GitHub repository
-            sh "whoami"
+            echo "$USER"
             git url: 'https://github.com/kwantke/movieapi.git',
                 branch: 'master'
         }
         stage('Build docker') {
             //build npm
-            sh "whoami"
             //sh "sudo npm run build"
             dockerImage = docker.build("movieapi:${env.BUILD_NUMBER}")
             //sh 'docker build -t springboot-deploy:${buildNumber} .'
