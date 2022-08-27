@@ -12,7 +12,7 @@ node {
         }
         stage('Build docker') {
             //build npm
-            //sh "sudo npm install"
+            sh "whoami"
             //sh "sudo npm run build"
             dockerImage = docker.build("movieapi:${env.BUILD_NUMBER}")
             //sh 'docker build -t springboot-deploy:${buildNumber} .'
