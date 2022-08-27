@@ -7,7 +7,8 @@ node {
         stage('Clone Repo') {
             //for display purposes
             //Get some code from a GitHub repository
-            echo "${BUILD_URL}"
+            echo "${BUILD_USER_ID}"
+             echo "${USER_ID}"
             git url: 'https://github.com/kwantke/movieapi.git',
                 branch: 'master'
         }
