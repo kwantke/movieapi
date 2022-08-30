@@ -19,8 +19,8 @@ public class MovieDAOImpl implements MovieDAO {
     }
 
     @Override
-    public List<MovieEntity> getMovieListEntity() {
-        List<MovieEntity> movieEntityList = movieRepository.findAll();
+    public List<MovieEntity> getMovieListEntity(String section) {
+        List<MovieEntity> movieEntityList = movieRepository.findBySection(section);
         return movieEntityList;
     }
 }

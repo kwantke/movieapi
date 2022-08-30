@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface MovieService {
 
-    public List<MovieDto> getMovieList();
+    public List<MovieDto> getMovieList(String section);
 
 }

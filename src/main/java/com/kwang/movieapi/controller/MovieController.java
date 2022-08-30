@@ -5,11 +5,9 @@ import com.kwang.movieapi.data.dto.MovieDto;
 import com.kwang.movieapi.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jdbc.DatabaseDriver;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -25,15 +23,16 @@ public class MovieController {
 
     @PostMapping(value="/movieList")
     public List<MovieDto> postMovieList(){
-        List<MovieDto> movieDtoList = movieService.getMovieList();
-        System.out.println(movieDtoList.toString());
-        return movieService.getMovieList();
+        //List<MovieDto> movieDtoList = movieService.getMovieList();
+        //System.out.println(movieDtoList.toString());
+        List list = new ArrayList();
+        return list ;
     }
 
     @GetMapping(value="/movieList")
-    public List<MovieDto> getMovieList(){
-        List<MovieDto> movieDtoList = movieService.getMovieList();
+    public List<MovieDto> getMovieList(@RequestParam String section){
+        List<MovieDto> movieDtoList = movieService.getMovieList(section);
         System.out.println(movieDtoList.toString());
-        return movieService.getMovieList();
+        return movieDtoList;
     }
 }

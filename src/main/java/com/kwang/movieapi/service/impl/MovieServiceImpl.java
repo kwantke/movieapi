@@ -21,8 +21,8 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public List<MovieDto> getMovieList() {
-        List<MovieEntity> movieEntityList = movieDAO.getMovieListEntity();
+    public List<MovieDto> getMovieList(String section) {
+        List<MovieEntity> movieEntityList = movieDAO.getMovieListEntity(section);
 
         //return movieEntityList.stream().map(movieEntity -> movieEntity.toDomain()).collect(Collectors.toList());
         return movieEntityList.stream().map(MovieEntity::toDomain).collect(Collectors.toList());
