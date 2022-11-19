@@ -10,4 +10,5 @@ public interface MovieService {
 
     public List<MovieDto> getMovieList(String section);
 
+    public MovieDto getMovie(int id);
 }

@@ -23,4 +23,11 @@ public class MovieDAOImpl implements MovieDAO {
         List<MovieEntity> movieEntityList = movieRepository.findBySection(section);
         return movieEntityList;
     }
+
+    @Override
+    public MovieEntity getMovieEntity(int id) {
+        MovieEntity movieEntity = movieRepository.getReferenceById(id);
+
+        return movieEntity;
+    }
 }

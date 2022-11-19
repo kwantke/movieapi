@@ -24,8 +24,12 @@ public class MovieController {
     @PostMapping(value="/movieList")
     public List<MovieDto> postMovieList(){
         //List<MovieDto> movieDtoList = movieService.getMovieList();
+
         //System.out.println(movieDtoList.toString());
+
+
         List list = new ArrayList();
+
         return list ;
     }
 
@@ -34,5 +38,12 @@ public class MovieController {
         List<MovieDto> movieDtoList = movieService.getMovieList(section);
         System.out.println(movieDtoList.toString());
         return movieDtoList;
+    }
+
+    @GetMapping(value="/movie")
+    public MovieDto getMovie(@RequestParam int id){
+        MovieDto movieDto = movieService.getMovie(id);
+
+        return movieDto;
     }
 }

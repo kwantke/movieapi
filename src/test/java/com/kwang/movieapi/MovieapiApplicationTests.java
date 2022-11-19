@@ -28,5 +28,10 @@ class MovieapiApplicationTests {
         System.out.println("Profile값 : "+ environment.getProperty("spring.profiles.active"));
         //No imple needed as we are simply loading the context
     }
+    @Test
+    void getMovie(){
+        MovieDto movie = movieService.getMovie(2);
+        System.out.println(movie.toString());
+    }
 
 }
