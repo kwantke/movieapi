@@ -43,7 +43,6 @@ public class MovieController {
     @GetMapping(value="/movie")
     public MovieDto getMovie(@RequestParam int id){
         MovieDto movieDto = movieService.getMovie(id);
-
         return movieDto;
     }
 }
