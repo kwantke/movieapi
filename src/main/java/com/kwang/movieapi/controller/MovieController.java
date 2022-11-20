@@ -44,7 +44,7 @@ public class MovieController {
     public MovieDto getMovie(@RequestParam int id){
         MovieDto movieDto = movieService.getMovie(id);
 
-        System.out.println("dev");
+        System.out.println("dev5");
 
         return movieDto;
     }
