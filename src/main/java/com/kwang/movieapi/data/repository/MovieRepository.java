@@ -10,4 +10,6 @@ import java.util.List;
 public interface MovieRepository extends JpaRepository<MovieEntity, String> {
 
     List<MovieEntity> findBySection(@Param("section") String section);
+
+    MovieEntity getReferenceById(@Param("id") int id);
 }

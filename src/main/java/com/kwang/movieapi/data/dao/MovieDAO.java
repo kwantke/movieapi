@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface MovieDAO {
     public List<MovieEntity> getMovieListEntity(String section);
+
+    public MovieEntity getMovieEntity(int id);
 }
