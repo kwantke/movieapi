@@ -44,7 +44,8 @@ public class MovieController {
     public MovieDto getMovie(@RequestParam int id){
         MovieDto movieDto = movieService.getMovie(id);
 
-        System.out.println("master commit");
+
+        System.out.println("chang to commit on dev");
 
         return movieDto;
     }
